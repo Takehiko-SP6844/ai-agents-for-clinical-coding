@@ -172,3 +172,8 @@ python guideline_inject.py --compare-with $S/inject_control --out $S/inject_rule
 - Only the first principal code per differential row is checked, and at most 6 rows per admission. About 100 other package codes are never reviewed.
 - The checker sees Naren's extracted evidence phrases, not the note text, so it cannot find a code that needs labs or free text it was not given.
 - Billing records are the only reference standard and are incomplete.
+
+## Final output files
+
+- `docs/RAG_summary.md`: what the RAG is, its steps, and why each component was chosen.
+- `results/final_output_with_billed.md` / `.csv`: for each of the 80 checked codes, Naren's code, the RAG's verdict and final code, and the billed codes for the admission (evaluation labels, never shown to the model). Built by `notebooks/rag_final_table.py`.
